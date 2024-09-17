@@ -1,0 +1,81 @@
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: radial-gradient(circle, #e0eafc, #cfdef3);
+    background-image: url(../css/bg3.jpg);
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+.stopwatch {
+    text-align: center;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    max-width: 360px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+#display {
+    font-size: 72px;
+    font-weight: 700;
+    color: #333;
+    background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    transition: background 0.5s, color 0.5s;
+}
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.controls button {
+    font-size: 18px;
+    padding: 12px 25px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #ff6b6b, #f06595);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    outline: none;
+    font-weight: 600;
+}
+.controls button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+}
+.controls button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+.controls button:hover {
+    background: linear-gradient(135deg, #f06595, #ff6b6b);
+    transform: scale(1.05);
+}
+.controls button:active {
+    background: linear-gradient(135deg, #ff6b6b, #f06595);
+    transform: scale(0.95);
+}
+.controls button:disabled {
+    background: #e0e0e0;
+    color: #b0b0b0;
+    cursor: not-allowed;
+}
